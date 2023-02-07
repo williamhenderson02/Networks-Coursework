@@ -99,7 +99,7 @@ def connection():
         print(f'A client has connected from {str(client_address)}')
 
         #set path for client
-        parent_directory = '/Users/will/Documents/Uni/Year 2/Networks and Systems/Networks/Coursework'
+        parent_directory = os.getcwd()
         path = os.path.join(parent_directory, username)
         
         #create upload folder corresponding to clients username if one does not already exist

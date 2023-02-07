@@ -35,7 +35,7 @@ def send_message():
                 #get data from text file
                 command, filename = message.split("/")
                 if command == 'upload':
-                    with open(f'/Users/will/Documents/Uni/Year 2/Networks and Systems/Networks/Coursework/{filename}', "r") as f:
+                    with open(filename, "r") as f:
                         text = f.read()
                     #send command and text file data to server
                     client.send(f'{message}/{text}'.encode(encoding))
