@@ -83,6 +83,7 @@ def handle_client(client, client_address, parent_directory):
 
 #Main function to receive the clients connection
 def connection():
+    valid_username = True
     #while loop to accept multiple client connections
     while True:
 
@@ -92,10 +93,9 @@ def connection():
     
         #recieve username from client
         username = client.recv(1024).decode(encoding)
-
-        #if the username is already being used by a connected client dont allow connection 
         usernames.append(username)
         clients.append(client)
+        
         print(f'A client has connected from {str(client_address)}')
 
         #set path for client
@@ -115,10 +115,9 @@ def connection():
         client.send('\nWelcome, you have connected to the server\n'.encode(encoding))
         client.send('\nEnter a message, type "quit" to exit or upload a text file using the following format; "upload/filenamme": '.encode(encoding))
 
-        #create aand start a thread for the client
+        #create and start a thread for the client
         thread = threading.Thread(target=handle_client, args=(client, client_address,parent_directory))
         thread.start()
-
 
 if __name__ == "__main__":
     connection()

@@ -2,6 +2,7 @@
 import threading
 import socket
 import sys
+import os
 
 #get arguments from terminal
 username = sys.argv[1]
@@ -35,10 +36,13 @@ def send_message():
                 #get data from text file
                 command, filename = message.split("/")
                 if command == 'upload':
-                    with open(filename, "r") as f:
-                        text = f.read()
-                    #send command and text file data to server
-                    client.send(f'{message}/{text}'.encode(encoding))
+                    if os.path.isfile(filename):
+                        with open(filename, "r") as f:
+                            text = f.read()
+                        #send command and text file data to server
+                        client.send(f'{message}/{text}'.encode(encoding))
+                    else:
+                        print('File does not exist, enter a filename that is in the current directory')
             except:
                 #send message to server
                 client.send(f'{username}: {message}'.encode(encoding))
