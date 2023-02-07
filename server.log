@@ -1,0 +1,8 @@
+2023-02-07 14:23:27,157 - INFO - Client ww: ('127.0.0.1', 57753) joined the server
+2023-02-07 14:23:29,777 - INFO - Message from ww: ('127.0.0.1', 57753): ww: hello
+2023-02-07 14:23:35,327 - INFO - Message from ww: ('127.0.0.1', 57753): ww: upload/file.txt
+2023-02-07 14:23:52,226 - INFO - Client ww: ('127.0.0.1', 57753) left the server
+2023-02-07 14:24:04,921 - INFO - Client ww: ('127.0.0.1', 57757) joined the server
+2023-02-07 14:24:05,790 - INFO - Message from ww: ('127.0.0.1', 57757): ww: hi
+2023-02-07 14:24:11,445 - INFO - Message from ww: ('127.0.0.1', 57757): ww: upload/file.txt
+2023-02-07 14:25:29,951 - INFO - Client ww: ('127.0.0.1', 57757) left the server
