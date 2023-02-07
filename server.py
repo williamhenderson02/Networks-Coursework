@@ -86,22 +86,25 @@ def connection():
     #while loop to accept multiple client connections
     while True:
 
-        #accept client connectios
+        #accept client connections
         print('Server waiting for a connection...')
         client, client_address = server.accept()
-        print(f'A client has connected from {str(client_address)}')
-
+    
         #recieve username from client
         username = client.recv(1024).decode(encoding)
+
+        #if the username is already being used by a connected client dont allow connection 
         usernames.append(username)
         clients.append(client)
+        print(f'A client has connected from {str(client_address)}')
 
         #set path for client
         parent_directory = '/Users/will/Documents/Uni/Year 2/Networks and Systems/Networks/Coursework'
         path = os.path.join(parent_directory, username)
         
-        #create upload folder corresponding to clients username
-        os.mkdir(path)
+        #create upload folder corresponding to clients username if one does not already exist
+        if not os.path.exists(path):
+            os.mkdir(path)
 
         #broadcast and log client connection
         print(f'Connection from {username}: {client_address}')

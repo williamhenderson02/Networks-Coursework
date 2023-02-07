@@ -34,16 +34,11 @@ def send_message():
             try:
                 #get data from text file
                 command, filename = message.split("/")
-                print(filename)
-                if path.os.isfile(filename):
-                    print('exists')
-                    if command == 'upload':
-                        with open(f'/Users/will/Documents/Uni/Year 2/Networks and Systems/Networks/Coursework/{filename}', "r") as f:
-                            text = f.read()
-                        #send command and text file data to server
-                        client.send(f'{message}/{text}'.encode(encoding))
-                else:
-                    print('doesnt exist')
+                if command == 'upload':
+                    with open(f'/Users/will/Documents/Uni/Year 2/Networks and Systems/Networks/Coursework/{filename}', "r") as f:
+                        text = f.read()
+                    #send command and text file data to server
+                    client.send(f'{message}/{text}'.encode(encoding))
             except:
                 #send message to server
                 client.send(f'{username}: {message}'.encode(encoding))
