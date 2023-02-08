@@ -42869,3 +42869,10 @@
 2023-02-07 22:53:27,666 - INFO - Message from will: ('127.0.0.1', 60509): 
 2023-02-07 22:53:27,666 - INFO - Message from bill: ('127.0.0.1', 60510): 
 2023-02-07 22:53:27,667 - INFO - Message from will: ('127.0.0.1', 60509): 
+2023-02-08 22:45:45,721 - INFO - Client will: ('127.0.0.1', 62750) joined the server
+2023-02-08 22:46:06,103 - INFO - Client josh: ('127.0.0.1', 62754) joined the server
+2023-02-08 22:46:11,369 - INFO - Message from josh: ('127.0.0.1', 62754): josh: hi
+2023-02-08 22:46:15,431 - INFO - Message from will: ('127.0.0.1', 62750): will: hey
+2023-02-08 22:47:21,831 - INFO - Message from josh: ('127.0.0.1', 62754): josh: whats up
+2023-02-08 22:55:31,306 - INFO - Client josh: ('127.0.0.1', 62754) left the server
+2023-02-08 22:55:33,163 - INFO - Client will: ('127.0.0.1', 62750) left the server
